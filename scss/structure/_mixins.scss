@@ -1,0 +1,160 @@
+//========================================== Font Face
+
+
+
+@font-face {
+    font-family: 'abraham_lincolnregular';
+    src: url('font/abrahamlincoln-webfont.eot');
+    src: url('font/abrahamlincoln-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/abrahamlincoln-webfont.woff') format('woff'),
+         url('font/abrahamlincoln-webfont.ttf') format('truetype'),
+         url('font/abrahamlincoln-webfont.svg#abraham_lincolnregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+@font-face {
+    font-family: 'sofia_pro_light_condensedRg';
+    src: url('font/SofiaProLiCond-webfont.eot');
+    src: url('font/SofiaProLiCond-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/SofiaProLiCond-webfont.woff') format('woff'),
+         url('font/SofiaProLiCond-webfont.ttf') format('truetype'),
+         url('font/SofiaProLiCond-webfont.svg#sofia_pro_light_condensedRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'decima_novaregular';
+    src: url('font/tipografiaramis_-_decimanova-webfont.eot');
+    src: url('font/tipografiaramis_-_decimanova-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/tipografiaramis_-_decimanova-webfont.woff') format('woff'),
+         url('font/tipografiaramis_-_decimanova-webfont.ttf') format('truetype'),
+         url('font/tipografiaramis_-_decimanova-webfont.svg#decima_novaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+//==========================================
+
+@mixin rounded($radius: 10px) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -ms-border-radius:$radius;
+}
+
+@mixin box-emboss($outerOpacity, $innerOpacity) {
+  box-shadow:
+    rgba(lighten($verde, 10%), $outerOpacity) 0px 1px 0, 
+    rgba(darken($verde, 10%), $innerOpacity) 0 1px 0 inset;
+}
+
+@mixin linear ($point, $from, $to){
+	/* fallback/image non-cover color */
+	background-color: $from;
+	/* Firefox 3.6+ */
+	background-image: -moz-linear-gradient($point, $from, $to);
+	/* Safari 4-5, Chrome 1-9 */
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to));
+	/* Safari 5.1, Chrome 10+ */
+	background-image: -webkit-linear-gradient($point, $from, $to);
+	/* IE 10 */
+  	background: -ms-linear-gradient($point, $from, $to);
+	/* Opera 11.10+ */
+	background-image: -o-linear-gradient($point, $from, $to);
+}
+
+/* TEXT SHADOW */
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4)) {
+    text-shadow: $x $y $blur $color;
+}
+
+/* TRANSITION */
+@mixin transition($what: all, $length: 1s, $easing: ease-in-out) {
+    -moz-transition:    $what $length $easing;
+    -o-transition:      $what $length $easing;
+    -webkit-transition: $what $length $easing;
+    -ms-transition:     $what $length $easing;
+    transition:         $what $length $easing;
+
+}
+
+/* BOX SHADOW */
+@mixin box-shadow($x, $y, $blur, $distance, $color) {
+    -webkit-box-shadow: $x $y $blur $distance $color;
+    -moz-box-shadow:    $x $y $blur $distance $color;
+	-o-box-shadow:		$x $y $blur $distance $color;
+    box-shadow:         $x $y $blur $distance $color;
+}
+
+
+/* Linear Gradient Stop 5% */
+@mixin linear-5 {
+	background: -webkit-gradient(linear, left top,left bottom, darken($verde,10%), color-stop(0.05, $verde));
+	background: -webkit-linear-gradient(top, darken($verde,10%), $verde 5%);
+	background: -moz-linear-gradient(top, darken($verde,10%), $verde 5%);
+	background: -ms-linear-gradient(top, darken($verde,10%), $verde 5%);
+	background: -o-linear-gradient(top, darken($verde,10%), $verde 5%);
+}
+
+/* Media queries */
+
+@mixin mq($mq) {
+  @if $mq == desk {
+    @media (min-width: 70em) { @content; }
+  }
+  @if $mq == lap {
+     @media only screen and (min-width: 50em)  and (max-width:  70em) { @content; }
+  }
+  @if $mq == tablet {
+     @media only screen and (min-width: 35em)  and (max-width:  50em) { @content; }
+  }
+  @if $mq == phone {
+    @media (max-width: 35em) { @content; }
+  }
+}
+
+
+/* Retina Images */
+@mixin image-2x($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
+
+
+/* Opacity */
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+
+/* Box Sizing */
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}
+
+// Border-radius
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}

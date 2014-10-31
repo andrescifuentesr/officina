@@ -1,0 +1,57 @@
+.menu-menu-principal-container {
+				float: left;
+				width:100%;
+				display:block;
+				margin:3em 0 0 0;
+				@include mq(tablet) {margin:1em 0 0 0;}
+				@include mq(phone) {margin:1em 0 0 0;}
+				
+
+ 			li {display:block;
+				margin-right:1em;						
+				text-align:left;
+				border-bottom: solid #CCCCCC 1px;
+				@include mq(tablet) {text-align:center; margin-right:0;}
+				@include mq(phone) {text-align:center; margin-right:0;}
+			}
+
+			.menu-item-379 {border-top: solid #CCCCCC 1px;
+			}
+			
+			.current-menu-item a {color:#005CAB;
+			}
+
+			a {text-decoration:none;
+				color:#333;
+				font-size:1.2em;
+				font-family: 'decima_novaregular';
+				text-transform : uppercase;
+				letter-spacing:1px;
+			}
+
+			a:hover {color:#005CAB;
+			}
+			
+}
+
+
+.home-pag {float:left;
+			width:80%;
+			@include mq(tablet) {width:100%;}
+			@include mq(phone) {width:100%;}
+		
+		.text-home {text-align:center; 
+					font-size:1.2em;
+					padding:0.5em; 
+					color:white; 
+					font-family: 'abraham_lincolnregular';
+					letter-spacing:1px;
+					background-color: rgba(235,91,38, 0.8);
+					@include mq(phone) {position:relative; background-color: rgba(235,91,38, 1);}
+					
+					a {text-decoration:none;}
+		}
+		
+		p {margin:0;}
+		
+}

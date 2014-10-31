@@ -1,0 +1,48 @@
+@-moz-keyframes balloons {
+	0% { -moz-transform:translateY(0); }
+	50%{ -moz-transform:translateY(-25px) rotate(4deg); }
+	100%{ -moz-transform:translateY(0);}
+}
+
+@-webkit-keyframes balloons {
+	0% { -webkit-transform:translateY(0); }
+	50%{ -webkit-transform:translateY(-25px) rotate(4deg); }
+	100%{ -webkit-transform:translateY(0);}
+}
+
+@-o-keyframes balloons {
+	0% { -o-transform:translateY(0) ; }
+	50%{ -o-transform:translateY(-25px) rotate(4deg); }
+	100%{ -o-transform:translateY(0);}
+}
+
+@keyframes balloons {
+	0% { transform:translateY(0); }
+	50%{ transform:translateY(-25px) rotate(4deg); }
+	100%{ transform:translateY(0);}
+}
+
+
+// ==================================
+// animation du logo
+// ==================================
+
+@keyframes logo-intro {
+	0% { margin-top: 10em }
+	100%{ margin-top: 2em }
+}
+
+@-webkit-keyframes logo-intro {
+	0% { margin-top: 10em }
+	100%{ margin-top: 2em }
+}
+
+@-o-keyframes  logo-intro {
+	0% { margin-top: 10em }
+	100%{ margin-top: 2em }
+}
+
+@-moz-keyframeslogo-intro {
+	0% { margin-top: 10em }
+	100%{ margin-top: 2em }
+}

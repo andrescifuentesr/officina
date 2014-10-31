@@ -1,0 +1,127 @@
+.site-header {width:20%;	
+			float:left;
+			@include mq(tablet) {width:100%; text-align:center}
+			@include mq(phone) {width:100%; text-align:center}
+			
+			.site-branding a {
+							width:130px; 
+							height:27px; 
+							background:url('../../../img/Logo_orange.png') no-repeat; 
+							display:block;
+							text-indent:-9999px;
+							transition:all 0.2s ease;
+							@include mq(tablet) {margin: 0 auto;}
+							@include mq(phone) {margin: 0 auto;}
+							
+							&:hover {@include opacity(0.7); }
+			}
+			
+			.menu-toggle {background:url(../../../img/menu-icon.svg) no-repeat center top;
+						height:40px;
+						width:200px;
+						padding-top:2em;
+						margin:0.4em auto 0.6em;
+						font-size: 1.4em;
+						font-family: 'abraham_lincolnregular';
+			}
+			
+			#bloc-lang {position: absolute;
+						top:5px;
+						left:20%;
+						@include mq(lap) {left : 10%;}
+						@include mq(tablet) {left: 10%;}
+						@include mq(phone) {rileftght: 5%;}
+						
+						ul {list-style :none ; margin:0;}
+						
+						li {display:inline-block; padding-right:0.2em;}
+						
+						li:first-child {border-right:1px solid $bleu;}
+						
+						a {text-decoration:none;
+							color:$bleu;
+						}
+						
+						.current-menu-item a, a:hover {color:$orange;}
+
+			}
+}
+
+/* =Menu
+----------------------------------------------- */
+
+.navigation-main {
+	clear: both;
+	display: block;
+	float: left;
+	width: 100%;
+}
+.navigation-main ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+.navigation-main li {
+	//float: left;
+	position: relative;
+}
+.navigation-main a {
+	display: block;
+	text-decoration: none;
+}
+.navigation-main ul ul {
+	display: none;
+	position: relative;
+	left: 1em;
+}
+.navigation-main ul ul ul {
+	left: 100%;
+	top: 0;
+}
+.navigation-main ul ul a {
+	width: 200px;
+}
+.navigation-main ul ul li {
+}
+.navigation-main li:hover > a {
+}
+.navigation-main ul ul :hover > a {
+}
+.navigation-main ul ul a:hover {
+}
+.navigation-main ul li:hover > ul {
+	display: block;
+}
+.navigation-main li.current_page_item a,
+.navigation-main li.current-menu-item a {
+	color:$bleu;
+}
+
+.navigation-main li.current-menu-ancestor > a {
+	color:$orange;
+}
+
+.navigation-main .current-menu-parent ul {display:block}
+
+/* Small menu */
+.menu-toggle {
+	display: none;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 50em) {
+	.menu-toggle,
+	.navigation-main.toggled .nav-menu {
+		display: block;
+	}
+	
+	.navigation-main ul ul {
+		position: relative;
+		top: 0;
+		left:0;
+	}
+	
+	.navigation-main ul {
+		display: none;
+	}
+}

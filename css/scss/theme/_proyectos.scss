@@ -1,0 +1,89 @@
+.menu-menu-projets-container {float: left;
+					width:100%;
+					display:block;
+					margin:3em 0 0 0;
+					@include mq(tablet) {margin:1em 0 0 0;}
+					@include mq(phone) {margin:1em 0 0 0;}
+
+
+					 li {display:block;
+						text-align:left;
+						margin-right:1em;
+						font-family: 'decima_novaregular';
+						@include mq(tablet) {text-align:center; margin-right:0;}
+						@include mq(phone) {text-align:center; margin-right:0;}
+					
+						> a:hover {color:$orange;}
+					
+					}
+					
+					
+					
+					.current-menu-item a, 
+					a:hover {color:$bleu;
+					}
+					
+					a {color:$gris;
+						font-size:1em;
+						letter-spacing:1px;
+						@include mq(phone) {padding: 0.3em 0;}
+					}
+					
+					#projet-item {color:#005CAB;
+								border-top: solid #CCCCCC 1px ;
+								border-bottom: solid #CCCCCC 1px ;
+								text-transform:uppercase;
+								font-size:1.3em;
+					}
+					
+					.sub-menu {width:100%;
+								
+								a {width:100%;
+									//font-style:italic;
+									color:#808080;
+									
+									&:hover {color:#005CAB;}
+								}
+					
+					}
+}
+
+.module-projets {float:left;
+		width:80%;
+		@include mq(tablet) {width:100%;}
+		@include mq(phone) {width:100%;}
+		
+}
+
+.module {width:50%;
+		float:left;
+		font-size:0.9em;
+		color:#878181;
+		padding-right:0.5em;
+		@include mq(tablet) {width:100%;}
+		@include mq(phone) {width:100%;}
+		
+		h1 {font-size:1.8em;
+			font-family:"abraham_lincolnregular"; 
+			color:#005CAB;
+			letter-spacing:1px;
+		}
+		
+		p {margin:0;}
+		
+}
+
+
+//=================== scroll
+.scroll-pane {
+	margin-top:2em;
+	height: 100px;
+	overflow: auto;
+	padding-right:1em;
+}
+
+.jspTrack { background-color:rgba(0, 0, 0, .05); 
+			width:50%;
+}
+
+.jspDrag {background-color:lighten($gris, 30%);}

@@ -1,0 +1,205 @@
+// $B a s e  T y p e
+// --------------------------------------------------------------------------
+
+
+$weight: normal;
+$line-height: 1.65;
+$font-size: 100; 
+$font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
+$font-family: serif;
+$font-family-sans: sofia_pro_light_condensedRg, arial;
+$font-properties: $weight, $line-height, $font-size, $font-family;
+
+$serif-boolean: false !default;
+
+@mixin base-type($weight, $line-height, $font-size, $font-family...) {
+	@if $serif-boolean {
+		font: $weight #{$font-size}%/#{$line-height} $font-family;
+	}@else {
+		font: $weight #{$font-size}%/#{$line-height} $font-family-sans;
+	}
+}
+
+
+// $W o r d    W r a p
+// --------------------------------------------------------------------------
+// Silent Sass Classes - A.K.A Placeholders
+//
+// normal: Indicates that lines may only break at normal word break points.
+// break-word : Indicates that normally unbreakable words may be broken at
+// arbitrary points if there are no otherwise acceptable break points in the line.
+
+%breakword {
+	word-wrap: break-word;
+}
+
+%normal-wrap {
+	word-wrap: normal;
+}
+
+%inherit-wrap {
+	word-wrap: auto;
+}
+
+
+
+//paragraph siblings indent
+// --------------------------------------------------------------------------
+
+$indent-val: 1.5em;
+
+p {
+	margin: 0 0 $indent-val;
+	& + p {
+		//text-indent: $indent-val;
+		//margin-top: -$indent-val;
+	}
+}
+
+
+// $H y p h e n
+// --------------------------------------------------------------------------
+//http://trentwalton.com/2011/09/07/css-hyphenation
+
+@mixin css-hyphens($val) {
+	// Accepted values: [ none | manual | auto ]
+	-webkit-hyphens: $val;	// Safari 5.1 thru 6, iOS 4.2 thru 6
+	-moz-hyphens: $val;		// Firefox 16 thru 20
+	-ms-hyphens: $val;		// IE10
+	-o-hyphens: $val;		// PRESTO...haha LOL
+	hyphens: $val;			// W3C standard
+}
+
+abbr,
+acronym,
+blockquote,
+code,
+dir,
+kbd,
+listing,
+plaintext,
+q,
+samp,
+tt,
+var,
+xmp {
+	// http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
+	@include css-hyphens(none);
+}
+
+
+// $D r o p c a p s
+// --------------------------------------------------------------------------
+//**
+ // Use ‘@include dropcap()’ with any selector. Pass in your own custom
+// arguments or feel free to use the arguments we’ve provided.
+@mixin dropcap($float: left, $font-size: 4em, $font-family: inherit, $text-indent: 0, $margin: inherit, $padding: inherit, $color: inherit, $lineHeight: 1, $bg: transparent) {
+	&:first-letter {
+		float: $float;
+		margin: $margin;
+		padding: $padding;
+		font-size: $font-size;
+		font-family: $font-family;
+		line-height: $lineHeight;
+		text-indent: $text-indent;
+		background: $bg;
+		color: $color;
+	}
+}
+
+// Including the @mixin with our .drop-cap class purely for demo purposes.
+// Not included in the actual Typeplate Sass or CSS download.
+//.drop-cap {
+//	@include dropcap($margin: 0 .5em auto 0, $padding: .5em, $color: #fff, $bg: #333);
+//}
+
+
+$measure: $font-base * $line-height;
+
+// $T y p e  S c a l e
+// --------------------------------------------------------------------------
+
+$tera: 117;		//	117	= 18 × 6.5
+$giga: 90;		//	90  = 18 × 5
+$mega: 72;		//	72  = 18 × 4
+$alpha: 60;		//	60  = 18 × 3.3333
+$beta: 48;		//	48  = 18 × 2.6667
+$gamma: 36;		//	36  = 18 × 2
+$delta: 24;		//	24  = 18 × 1.3333
+$epsilon: 21;	//	21  = 18 × 1.1667
+$zeta: 18; 		//	18  = 18 × 1
+
+// typscale unit
+$type-scale-unit-value: rem;
+
+// typographic scale
+@mixin modular-scale($scale, $base, $value, $measure:"") {
+	font-size: $scale#{px};
+	font-size: modular-scale($scale, $base, $value);
+	@if $measure != "" {
+		margin-bottom: measure-margin($scale, $measure, $value);
+	}
+}
+
+// modular scale function to return em equivalent
+@function modular-scale($scale, $base, $value) {
+	// divide a given font-size by base font-size & return a relative em value
+	@return ($scale/$base)#{$value};
+}
+
+// divide 1 unit of measure by given font-size & return a relative em value
+@function measure-margin($scale, $measure, $value) {
+	@return ($measure/$scale)#{$value};
+}
+
+// styles for all headings, in the style of @csswizardry
+%hN {
+	// voodoo to enable ligatures and kerning
+	text-rendering: optimizeLegibility;
+	// this fixes huge spaces when a heading wraps onto two lines
+	line-height: 1;
+	margin-top: 0;
+}
+
+// make a multi-dimensional array, where:
+// the first value is the name of the class
+// and the second value is the variable for the size
+$sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gamma, delta $delta, epsilon $epsilon, zeta $zeta;
+
+// associate h1-h6 tags with their appropriate greek heading
+@each $size in $sizes {
+	.#{nth($size, 1)} {
+		@include modular-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', $measure);
+	}
+}
+
+// associate h1-h6 tags with their appropriate greek heading
+h1 {
+	@extend .alpha;
+	@extend %hN;
+}
+
+h2 {
+	@extend .beta;
+	@extend %hN;
+}
+
+h3 {
+	@extend .gamma;
+	@extend %hN;
+}
+
+h4 {
+	@extend .delta;
+	@extend %hN;
+}
+
+h5 {
+	@extend .epsilon;
+	@extend %hN;
+}
+
+h6 {
+	@extend .zeta;
+	@extend %hN;
+}

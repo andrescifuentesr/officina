@@ -1,0 +1,76 @@
+//structure
+@import 'scss/structure/mixins';
+@import 'scss/structure/variables';
+@import 'scss/inc/template';
+@import 'scss/structure/grid';
+@import 'scss/structure/forms';
+@import 'scss/structure/typography';
+
+// inc
+@import 'scss/inc/responsive_slides';
+@import 'scss/inc/flex';
+@import 'scss/inc/fancybox';
+@import 'scss/inc/jscrollpane';
+
+//animations
+@import 'scss/animations/animation_ballon';
+
+//theme
+@import 'scss/theme/header';
+@import 'scss/theme/home';
+@import 'scss/theme/index';
+@import 'scss/theme/proyectos';
+@import 'scss/theme/info';
+@import 'scss/theme/book';
+@import 'scss/theme/equipe';
+@import 'scss/theme/footer';
+
+
+*,
+*:after,
+*:before {
+  @include box-sizing(border-box);
+}
+
+
+html {
+	@include base-type($font-properties...);
+}
+
+body {
+	// Ala Trent Walton
+	@include css-hyphens(auto);
+	@extend %breakword;
+}
+
+
+
+#page{
+	margin:5em 20%;
+	@include mq(lap) {margin:5em 10%;}
+	@include mq(tablet) {margin:2em 10%;}
+	@include mq(phone) {margin:2em 5%;}
+}
+
+/* ========= Helperclass =========== */	
+
+
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}

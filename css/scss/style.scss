@@ -1,0 +1,76 @@
+//structure
+@import 'structure/mixins';
+@import 'structure/variables';
+@import 'inc/template';
+@import 'structure/grid';
+@import 'structure/forms';
+@import 'structure/typography';
+
+// inc
+@import 'inc/responsive_slides';
+@import 'inc/flex';
+@import 'inc/fancybox';
+@import 'inc/jscrollpane';
+
+//animations
+@import 'animations/animation_ballon';
+
+//theme
+@import 'theme/header';
+@import 'theme/home';
+@import 'theme/index';
+@import 'theme/proyectos';
+@import 'theme/info';
+@import 'theme/book';
+@import 'theme/equipe';
+@import 'theme/footer';
+
+
+*,
+*:after,
+*:before {
+  @include box-sizing(border-box);
+}
+
+
+html {
+	@include base-type($font-properties...);
+}
+
+body {
+	// Ala Trent Walton
+	@include css-hyphens(auto);
+	@extend %breakword;
+}
+
+
+
+#page{
+	margin:5em 20%;
+	@include mq(lap) {margin:5em 10%;}
+	@include mq(tablet) {margin:2em 10%;}
+	@include mq(phone) {margin:2em 5%;}
+}
+
+/* ========= Helperclass =========== */	
+
+
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
