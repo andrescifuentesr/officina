@@ -12,10 +12,29 @@
 
 get_header(); ?>
 
-	<?php while ( have_posts() ) : the_post(); ?>
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
 
-		<?php get_template_part( 'content', 'page' ); ?>
+			<nav class="nav-secondaire">
+				<ul>
+					<?php 
+						$args = array(
+							'child_of'           => 8,
+							'title_li'           => __( '' ),
+						);
+						wp_list_pages( $args ); 
+					?>
+					<li>CV</li>
+				</ul>		
+			</nav>		
 
-	<?php endwhile; // end of the loop. ?>
+			<?php while ( have_posts() ) : the_post(); ?>
+
+				<?php get_template_part( 'content', 'page' ); ?>
+
+			<?php endwhile; // end of the loop. ?>
+
+		</div><!-- #content -->
+	</div><!-- #primary -->			
 
 <?php get_footer(); ?>

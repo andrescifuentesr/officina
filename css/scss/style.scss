@@ -2,7 +2,7 @@
 @import 'structure/mixins';
 @import 'structure/variables';
 @import 'inc/template';
-@import 'structure/grid';
+// @import 'structure/grid';
 @import 'structure/forms';
 @import 'structure/typography';
 
@@ -17,8 +17,10 @@
 
 //theme
 @import 'theme/header';
+@import 'theme/loader';
+@import 'theme/page';
+@import 'theme/langue';
 @import 'theme/home';
-@import 'theme/index';
 @import 'theme/proyectos';
 @import 'theme/info';
 @import 'theme/book';
@@ -46,10 +48,11 @@ body {
 
 
 #page{
-	margin:5em 20%;
-	@include mq(lap) {margin:5em 10%;}
-	@include mq(tablet) {margin:2em 10%;}
-	@include mq(phone) {margin:2em 5%;}
+	margin:0 15% 2em;
+	max-width:1200px;
+	@include mq(lap) {margin:0 10% 2em;}
+	@include mq(tablet) {margin:0 5% 2em;}
+	@include mq(phone) {margin:0 2.5% 2em;}
 }
 
 /* ========= Helperclass =========== */	

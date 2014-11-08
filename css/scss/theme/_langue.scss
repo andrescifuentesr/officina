@@ -1,0 +1,43 @@
+#bloc-lang {
+	position: absolute;
+	top:5px;
+	right:15%;
+	@include mq(lap) {right: 10%;}
+	@include mq(tablet) {right: 5%;}
+	@include mq(tablet) {right: 5%;}
+	@include mq(phone) {right: 2.5%;}
+	
+	ul {list-style :none ; margin:0;}
+	
+	li {
+		display:inline-block;
+		padding-right:0.2em !important;
+		@include mq(phone) {display:block; width:100%; padding-right:0 !important;float:none;}
+	}
+	
+	.icl-fr {
+		border-right:1px solid $bleu;
+		@include mq(phone) {border-right: none; border-bottom:1px solid $bleu; }
+	}
+	
+	a {
+		text-decoration:none;
+		font-size: 1em;
+		font-family: $font-family-sans;
+	}
+
+	a.lang_sel_sel {
+		color:$bleu;
+	}
+
+	a.lang_sel_other {
+		color:$orange;
+	}
+	
+	a:hover {color:$orange;}
+
+	#lang_sel_list a, #lang_sel_list a:visited {
+		background: transparent;
+	}
+
+}

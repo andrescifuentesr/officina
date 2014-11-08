@@ -38,12 +38,21 @@
 }
 
 //==========================================
-
-@mixin rounded($radius: 10px) {
-  border-radius: $radius;
-  -moz-border-radius: $radius;
-  -webkit-border-radius: $radius;
-  -ms-border-radius:$radius;
+//=================================
+/* Simple grid */
+ 
+@mixin simple-grid($nombre-items , $margin-right ){
+    width: ( (100% - ( ($nombre-items - 1) * $margin-right) ) / $nombre-items); 
+    margin-right: $margin-right;
+    display: inline-block;
+    
+    &:nth-child(n) {
+      margin-right: $margin-right;
+    }
+ 
+    &:nth-child( #{$nombre-items}n) {
+      margin-right: 0;
+    }
 }
 
 @mixin box-emboss($outerOpacity, $innerOpacity) {
@@ -52,53 +61,11 @@
     rgba(darken($verde, 10%), $innerOpacity) 0 1px 0 inset;
 }
 
-@mixin linear ($point, $from, $to){
-	/* fallback/image non-cover color */
-	background-color: $from;
-	/* Firefox 3.6+ */
-	background-image: -moz-linear-gradient($point, $from, $to);
-	/* Safari 4-5, Chrome 1-9 */
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to));
-	/* Safari 5.1, Chrome 10+ */
-	background-image: -webkit-linear-gradient($point, $from, $to);
-	/* IE 10 */
-  	background: -ms-linear-gradient($point, $from, $to);
-	/* Opera 11.10+ */
-	background-image: -o-linear-gradient($point, $from, $to);
-}
-
 /* TEXT SHADOW */
 @mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4)) {
     text-shadow: $x $y $blur $color;
 }
 
-/* TRANSITION */
-@mixin transition($what: all, $length: 1s, $easing: ease-in-out) {
-    -moz-transition:    $what $length $easing;
-    -o-transition:      $what $length $easing;
-    -webkit-transition: $what $length $easing;
-    -ms-transition:     $what $length $easing;
-    transition:         $what $length $easing;
-
-}
-
-/* BOX SHADOW */
-@mixin box-shadow($x, $y, $blur, $distance, $color) {
-    -webkit-box-shadow: $x $y $blur $distance $color;
-    -moz-box-shadow:    $x $y $blur $distance $color;
-	-o-box-shadow:		$x $y $blur $distance $color;
-    box-shadow:         $x $y $blur $distance $color;
-}
-
-
-/* Linear Gradient Stop 5% */
-@mixin linear-5 {
-	background: -webkit-gradient(linear, left top,left bottom, darken($verde,10%), color-stop(0.05, $verde));
-	background: -webkit-linear-gradient(top, darken($verde,10%), $verde 5%);
-	background: -moz-linear-gradient(top, darken($verde,10%), $verde 5%);
-	background: -ms-linear-gradient(top, darken($verde,10%), $verde 5%);
-	background: -o-linear-gradient(top, darken($verde,10%), $verde 5%);
-}
 
 /* Media queries */
 
@@ -110,10 +77,10 @@
      @media only screen and (min-width: 50em)  and (max-width:  70em) { @content; }
   }
   @if $mq == tablet {
-     @media only screen and (min-width: 35em)  and (max-width:  50em) { @content; }
+     @media only screen and (min-width: 36em)  and (max-width:  50em) { @content; }
   }
   @if $mq == phone {
-    @media (max-width: 35em) { @content; }
+    @media (max-width: 36em) { @content; }
   }
 }
 
@@ -147,11 +114,3 @@
           box-sizing: $box-model;
 }
 
-// Border-radius
-
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  border-radius: $radius;
-  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
-}

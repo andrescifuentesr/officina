@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 @font-face {
   font-family: 'abraham_lincolnregular';
   src: url("../../font/abrahamlincoln-webfont.eot");
@@ -24,13 +22,9 @@
   font-style: normal;
 }
 
+/* Simple grid */
+
 /* TEXT SHADOW */
-
-/* TRANSITION */
-
-/* BOX SHADOW */
-
-/* Linear Gradient Stop 5% */
 
 /* Media queries */
 
@@ -660,399 +654,6 @@ object {
   width: 50%;
 }
 
-/*------------------------------------*\
-    $CSSWIZARDRY-GRIDS
-\*------------------------------------*/
-
-/**
- * CONTENTS
- * INTRODUCTION.........How the grid system works.
- * VARIABLES............Your settings.
- * MIXINS...............Library mixins.
- * GRID SETUP...........Build the grid structure.
- * WIDTHS...............Build our responsive widths around our breakpoints.
- * PUSH.................Push classes.
- * PULL.................Pull classes.
- */
-
-/*------------------------------------*\
-    $INTRODUCTION
-\*------------------------------------*/
-
-/**
- * csswizardry grids provides you with widths to suit a number of breakpoints
- * designed around devices of a size you specify. Out of the box, csswizardry
- * grids caters to the following types of device:
- *
- * palm     --  palm-based devices, like phones and small tablets
- * lap      --  lap-based devices, like iPads or laptops
- * portable --  all of the above
- * desk     --  stationary devices, like desktop computers
- * regular  --  any/all types of device
- *
- * These namespaces are then used in the library to give you the ability to
- * manipulate your layouts based around them, for example:
- *
-   <div class="grid__item  one-whole  lap--one-half  desk--one-third">
- *
- * This would give you a grid item which is 100% width unless it is on a lap
- * device, at which point it become 50% wide, or it is on a desktop device, at
- * which point it becomes 33.333% width.
- *
- * csswizardry grids also has push and pull classes which allow you to nudge
- * grid items left and right by a defined amount. These follow the same naming
- * convention as above, but are prepended by either `push--` or `pull--`, for
- * example:
- *
-   `class="grid__item  one-half  push--one-half"`
- *
- * This would give you a grid item which is 50% width and pushed over to the
- * right by 50%.
- *
- * All classes in csswizardry grids follow this patten, so you should fairly
- * quickly be able to piece together any combinations you can imagine, for
- * example:
- *
-   `class="grid__item  one-whole  lap--one-half  desk--one-third  push--desk--one-third"`
- *
-   `class="grid__item  one-quarter  palm--one-half  push--palm--one-half"`
- *
-   `class="grid__item  palm--one-third  desk--five-twelfths"`
- */
-
-/*------------------------------------*\
-    $VARIABLES
-\*------------------------------------*/
-
-/**
- * If you are building a non-responsive site but would still like to use
- * csswizardry-grids, set this to ‘false’:
- */
-
-/**
- * Is this build mobile first? Setting to ‘true’ means that all grids will be
- * 100% width if you do not apply a more specific class to them.
- */
-
-/**
- * Set the spacing between your grid items.
- */
-
-/**
- * Would you like Sass’ silent classes, or regular CSS classes?
- */
-
-/**
- * Would you like push and pull classes enabled?
- */
-
-/**
- * Using `inline-block` means that the grid items need their whitespace removing
- * in order for them to work correctly. Set the following to true if you are
- * going to achieve this by manually removing/commenting out any whitespace in
- * your HTML yourself.
- *
- * Setting this to false invokes a hack which cannot always be guaranteed,
- * please see the following for more detail:
- *
- * github.com/csswizardry/csswizardry-grids/commit/744d4b23c9d2b77d605b5991e54a397df72e0688
- * github.com/csswizardry/inuit.css/issues/170#issuecomment-14859371
- */
-
-/**
- * Define your breakpoints. The first value is the prefix that shall be used for
- * your classes (e.g. `.palm--one-half`), the second value is the media query
- * that the breakpoint fires at.
- */
-
-/**
- * Define which namespaced breakpoints you would like to generate for each of
- * widths, push and pull. This is handy if you only need pull on, say, desk, or
- * you only need a new width breakpoint at mobile sizes. It allows you to only
- * compile as much CSS as you need. All are turned on by default, but you can
- * add and remove breakpoints at will.
- *
- * Push and pull shall only be used if `$push` and/or `$pull` and `$responsive`
- * have been set to ‘true’.
- */
-
-/**
- * You do not need to edit anything from this line onward; csswizardry-grids is
- * good to go. Happy griddin’!
- */
-
-/*------------------------------------*\
-    $MIXINS
-\*------------------------------------*/
-
-/**
- * These mixins are for the library to use only, you should not need to modify
- * them at all.
- *
- * Enclose a block of code with a media query as named in `$breakpoints`.
- */
-
-/**
- * Drop relative positioning into silent classes which can’t take advantage of
- * the `[class*="push--"]` and `[class*="pull--"]` selectors.
- */
-
-/*------------------------------------*\
-    $GRID SETUP
-\*------------------------------------*/
-
-/**
- * 1. Allow the grid system to be used on lists.
- * 2. Remove any margins and paddings that might affect the grid system.
- * 3. Apply a negative `margin-left` to negate the columns’ gutters.
- */
-
-/**
- * 1. Cause columns to stack side-by-side.
- * 2. Space columns apart.
- * 3. Align columns to the tops of each other.
- * 4. Full-width unless told to behave otherwise.
- * 5. Required to combine fluid widths and fixed gutters.
- */
-
-/**
- * Reversed grids allow you to structure your source in the opposite order to
- * how your rendered layout will appear.
- */
-
-/**
- * Gutterless grids have all the properties of regular grids, minus any spacing.
- */
-
-/**
- * Align the entire grid to the right.
- */
-
-/**
- * Centered grids align grid items centrally without needing to use push or pull
- * classes.
- */
-
-/*------------------------------------*\
-    $WIDTHS
-\*------------------------------------*/
-
-/**
- * Create our width classes, prefixed by the specified namespace.
- */
-
-/**
- * Our regular, non-responsive width classes.
- */
-
-/**
- * Whole
- */
-
-/**
- * Halves
- */
-
-/**
- * Thirds
- */
-
-/**
- * Quarters
- */
-
-/**
- * Fifths
- */
-
-/**
- * Sixths
- */
-
-/**
- * Eighths
- */
-
-/**
- * Tenths
- */
-
-/**
- * Twelfths
- */
-
-/**
- * Our responsive classes, if we have enabled them.
- */
-
-@media only screen and (max-width: 38em) {
-  /**
-   * Whole
-   */
-
-  /**
-   * Halves
-   */
-
-  /**
-   * Thirds
-   */
-
-  /**
-   * Quarters
-   */
-
-  /**
-   * Fifths
-   */
-
-  /**
-   * Sixths
-   */
-
-  /**
-   * Eighths
-   */
-
-  /**
-   * Tenths
-   */
-
-  /**
-   * Twelfths
-   */
-}
-
-@media only screen and (min-width: 38em) and (max-width: 57em) {
-  /**
-   * Whole
-   */
-
-  /**
-   * Halves
-   */
-
-  /**
-   * Thirds
-   */
-
-  /**
-   * Quarters
-   */
-
-  /**
-   * Fifths
-   */
-
-  /**
-   * Sixths
-   */
-
-  /**
-   * Eighths
-   */
-
-  /**
-   * Tenths
-   */
-
-  /**
-   * Twelfths
-   */
-}
-
-@media only screen and (min-width: 57em) and (max-width: 70em) {
-  /**
-   * Whole
-   */
-
-  /**
-   * Halves
-   */
-
-  /**
-   * Thirds
-   */
-
-  /**
-   * Quarters
-   */
-
-  /**
-   * Fifths
-   */
-
-  /**
-   * Sixths
-   */
-
-  /**
-   * Eighths
-   */
-
-  /**
-   * Tenths
-   */
-
-  /**
-   * Twelfths
-   */
-}
-
-@media only screen and (min-width: 70em) {
-  /**
-   * Whole
-   */
-
-  /**
-   * Halves
-   */
-
-  /**
-   * Thirds
-   */
-
-  /**
-   * Quarters
-   */
-
-  /**
-   * Fifths
-   */
-
-  /**
-   * Sixths
-   */
-
-  /**
-   * Eighths
-   */
-
-  /**
-   * Tenths
-   */
-
-  /**
-   * Twelfths
-   */
-}
-
-/*------------------------------------*\
-    $PUSH
-\*------------------------------------*/
-
-/**
- * Push classes, to move grid items over to the right by certain amounts.
- */
-
-/*------------------------------------*\
-    $PULL
-\*------------------------------------*/
-
-/**
- * Pull classes, to move grid items back to the left by certain amounts.
- */
-
 button,
 input,
 select,
@@ -1279,7 +880,7 @@ h6 {
   border: 0;
 }
 
-@media (max-width: 35em) {
+@media (max-width: 36em) {
   .rslides img {
     float: none;
   }
@@ -1315,6 +916,19 @@ h6 {
  *
  * Contributing author: Tyler Smith (@mbmufffin)
  */
+
+/* Loading
+***********************/
+
+.loading {
+  height: 20em;
+  width: 100%;
+  position: relative;
+}
+
+.loading .flexslider {
+  opacity: 0;
+}
 
 /* Browser Resets */
 
@@ -1951,21 +1565,43 @@ html[xmlns] .slides {
 }
 
 .site-header {
-  width: 20%;
-  float: left;
+  width: 100%;
+  margin: 2em 0 2em;
 }
 
-@media only screen and (min-width: 35em) and (max-width: 50em) {
+@media only screen and (min-width: 36em) and (max-width: 50em) {
   .site-header {
     width: 100%;
     text-align: center;
+    margin: 1em 0 0;
   }
 }
 
-@media (max-width: 35em) {
+@media (max-width: 36em) {
   .site-header {
     width: 100%;
     text-align: center;
+    margin: 1em 0 0;
+  }
+}
+
+.site-header .site-branding {
+  width: 25%;
+  float: left;
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 36em) and (max-width: 50em) {
+  .site-header .site-branding {
+    float: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 36em) {
+  .site-header .site-branding {
+    float: none;
+    width: 100%;
   }
 }
 
@@ -1979,13 +1615,13 @@ html[xmlns] .slides {
   transition: all 0.2s ease;
 }
 
-@media only screen and (min-width: 35em) and (max-width: 50em) {
+@media only screen and (min-width: 36em) and (max-width: 50em) {
   .site-header .site-branding a {
     margin: 0 auto;
   }
 }
 
-@media (max-width: 35em) {
+@media (max-width: 36em) {
   .site-header .site-branding a {
     margin: 0 auto;
   }
@@ -1996,87 +1632,101 @@ html[xmlns] .slides {
   filter: alpha(opacity=70);
 }
 
-.site-header .menu-toggle {
-  background: url(../../../img/menu-icon.svg) no-repeat center top;
-  height: 40px;
-  width: 200px;
-  padding-top: 2em;
-  margin: 0.4em auto 0.6em;
-  font-size: 1.4em;
-  font-family: 'abraham_lincolnregular';
-}
-
-.site-header #bloc-lang {
-  position: absolute;
-  top: 5px;
-  left: 20%;
-}
-
-@media only screen and (min-width: 50em) and (max-width: 70em) {
-  .site-header #bloc-lang {
-    left: 10%;
-  }
-}
-
-@media only screen and (min-width: 35em) and (max-width: 50em) {
-  .site-header #bloc-lang {
-    left: 10%;
-  }
-}
-
-@media (max-width: 35em) {
-  .site-header #bloc-lang {
-    rileftght: 5%;
-  }
-}
-
-.site-header #bloc-lang ul {
-  list-style: none;
-  margin: 0;
-}
-
-.site-header #bloc-lang li {
-  display: inline-block;
-  padding-right: 0.2em;
-}
-
-.site-header #bloc-lang li:first-child {
-  border-right: 1px solid #005cab;
-}
-
-.site-header #bloc-lang a {
-  text-decoration: none;
-  color: #005cab;
-}
-
-.site-header #bloc-lang .current-menu-item a,
-.site-header #bloc-lang a:hover {
-  color: #eb5b26;
-}
-
 /* =Menu
 ----------------------------------------------- */
 
 .navigation-main {
-  clear: both;
   display: block;
   float: left;
-  width: 100%;
+  width: 75%;
+}
+
+@media only screen and (min-width: 36em) and (max-width: 50em) {
+  .navigation-main {
+    width: 100%;
+    float: none;
+    margin: 1em 0 0 0;
+  }
+}
+
+@media (max-width: 36em) {
+  .navigation-main {
+    width: 100%;
+    float: none;
+    margin: 1em 0 0 0;
+  }
 }
 
 .navigation-main ul {
   list-style: none;
   margin: 0;
   padding-left: 0;
+  text-align: right;
 }
 
 .navigation-main li {
-  position: relative;
+  display: inline-block;
+  padding: 0 0 0 2em;
+  margin-left: 1em;
+}
+
+@media only screen and (min-width: 36em) and (max-width: 50em) {
+  .navigation-main li {
+    display: block;
+    text-align: left;
+    margin-left: 0;
+    padding: 0;
+  }
+
+  .navigation-main li:last-child a {
+    border-bottom: 1px solid #333;
+  }
+}
+
+@media (max-width: 36em) {
+  .navigation-main li {
+    display: block;
+    text-align: left;
+    margin-left: 0;
+    padding: 0;
+  }
+
+  .navigation-main li:last-child a {
+    border-bottom: 1px solid #333;
+  }
+}
+
+.navigation-main li:first-child {
+  border-left: none;
 }
 
 .navigation-main a {
-  display: block;
   text-decoration: none;
+  color: #333;
+  font-size: 1em;
+  font-family: 'decima_novaregular';
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media only screen and (min-width: 36em) and (max-width: 50em) {
+  .navigation-main a {
+    padding: 0.5em 0 0.5em 1em;
+    border-top: 1px solid #333;
+    display: block;
+  }
+}
+
+@media (max-width: 36em) {
+  .navigation-main a {
+    padding: 0.5em 0 0.5em 1em;
+    border-top: 1px solid #333;
+    display: block;
+  }
+}
+
+.navigation-main a:hover {
+  color: #005CAB;
 }
 
 .navigation-main ul ul {
@@ -2099,8 +1749,10 @@ html[xmlns] .slides {
 }
 
 .navigation-main li.current_page_item a,
-.navigation-main li.current-menu-item a {
+.navigation-main li.current-menu-item a,
+.navigation-main li.current-page-ancestor a {
   color: #005cab;
+  color: #005CAB;
 }
 
 .navigation-main li.current-menu-ancestor > a {
@@ -2124,6 +1776,16 @@ html[xmlns] .slides {
     display: block;
   }
 
+  .menu-toggle {
+    background: url(../../../img/menu-icon.svg) no-repeat right center;
+    height: 40px;
+    position: absolute;
+    top: .2em;
+    font-size: 1.4em;
+    padding: 1em 2em 1em 0;
+    text-indent: -9999px;
+  }
+
   .navigation-main ul ul {
     position: relative;
     top: 0;
@@ -2135,256 +1797,485 @@ html[xmlns] .slides {
   }
 }
 
-.menu-menu-principal-container {
-  float: left;
+.spinner {
+  position: absolute;
+  top: 50%;
   width: 100%;
-  display: block;
-  margin: 3em 0 0 0;
+  text-align: center;
 }
 
-@media only screen and (min-width: 35em) and (max-width: 50em) {
-  .menu-menu-principal-container {
-    margin: 1em 0 0 0;
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: #333;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+  animation: bouncedelay 1.4s infinite ease-in-out;
+  /* Prevent first frame from flickering when animation starts */
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+  }
+
+  40% {
+    -webkit-transform: scale(1);
   }
 }
 
-@media (max-width: 35em) {
-  .menu-menu-principal-container {
-    margin: 1em 0 0 0;
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+
+  40% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
   }
 }
 
-.menu-menu-principal-container li {
-  display: block;
-  margin-right: 1em;
-  text-align: left;
-  border-bottom: solid #CCCCCC 1px;
+.nav-secondaire {
+  text-align: right;
+  padding: 0.5em 0;
+  margin: 0 0 2em;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 }
 
-@media only screen and (min-width: 35em) and (max-width: 50em) {
-  .menu-menu-principal-container li {
+@media only screen and (min-width: 36em) and (max-width: 50em) {
+  .nav-secondaire {
     text-align: center;
-    margin-right: 0;
+    margin-bottom: 1em;
   }
 }
 
-@media (max-width: 35em) {
-  .menu-menu-principal-container li {
-    text-align: center;
-    margin-right: 0;
+@media (max-width: 36em) {
+  .nav-secondaire {
+    text-align: left;
+    margin-bottom: 1em;
   }
 }
 
-.menu-menu-principal-container .menu-item-379 {
-  border-top: solid #CCCCCC 1px;
+.nav-secondaire ul {
+  margin: 0;
 }
 
-.menu-menu-principal-container .current-menu-item a {
+.nav-secondaire li {
+  list-style: none;
+  display: inline-block;
+  margin-left: 2em;
+}
+
+@media (max-width: 36em) {
+  .nav-secondaire li {
+    width: 49%;
+    margin-left: 0;
+  }
+}
+
+.nav-secondaire .current-cat a,
+.nav-secondaire .current_page_item a {
   color: #005CAB;
 }
 
-.menu-menu-principal-container a {
+.nav-secondaire a {
   text-decoration: none;
   color: #333;
-  font-size: 1.2em;
-  font-family: 'decima_novaregular';
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
-.menu-menu-principal-container a:hover {
-  color: #005CAB;
+@media (max-width: 36em) {
+  .nav-secondaire a {
+    padding: 0.5em 0;
+  }
 }
 
-.home-pag {
-  float: left;
+/*---------------*/
+
+/***** Ming *****/
+
+/*---------------*/
+
+/* Common style */
+
+.site-main figure {
+  position: relative;
+  background: #3085a3;
+  text-align: center;
+  cursor: pointer;
+}
+
+.site-main figure img {
+  position: relative;
+  display: block;
+  min-height: 100%;
+  max-width: 100%;
+  opacity: 0.8;
+}
+
+.site-main figure p {
+  padding: 0 0.5em;
+  opacity: 0;
+  line-height: 1.3;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 80%;
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
 }
 
-@media only screen and (min-width: 35em) and (max-width: 50em) {
-  .home-pag {
+.site-main figure figcaption {
+  padding: 10%;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.25em;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.site-main figure figcaption::before,
+.site-main figure figcaption::after {
+  pointer-events: none;
+}
+
+.site-main figure figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+figure.effect-ming {
+  background: #030c17;
+}
+
+figure.effect-ming img {
+  opacity: 0.9;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+figure.effect-ming figcaption::before {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  bottom: 30px;
+  left: 30px;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.2);
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
+  -webkit-transform: scale3d(1.4, 1.4, 1);
+  transform: scale3d(1.4, 1.4, 1);
+}
+
+figure.effect-ming:hover figcaption::before {
+  opacity: 1;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+}
+
+figure.effect-ming:hover p {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+figure.effect-ming:hover figcaption {
+  background-color: rgba(58, 52, 42, 0);
+}
+
+figure.effect-ming:hover img {
+  opacity: 0.4;
+}
+
+#bloc-lang {
+  position: absolute;
+  top: 5px;
+  right: 15%;
+}
+
+@media only screen and (min-width: 50em) and (max-width: 70em) {
+  #bloc-lang {
+    right: 10%;
+  }
+}
+
+@media only screen and (min-width: 36em) and (max-width: 50em) {
+  #bloc-lang {
+    right: 5%;
+  }
+}
+
+@media only screen and (min-width: 36em) and (max-width: 50em) {
+  #bloc-lang {
+    right: 5%;
+  }
+}
+
+@media (max-width: 36em) {
+  #bloc-lang {
+    right: 2.5%;
+  }
+}
+
+#bloc-lang ul {
+  list-style: none;
+  margin: 0;
+}
+
+#bloc-lang li {
+  display: inline-block;
+  padding-right: 0.2em !important;
+}
+
+@media (max-width: 36em) {
+  #bloc-lang li {
+    display: block;
+    width: 100%;
+    padding-right: 0 !important;
+    float: none;
+  }
+}
+
+#bloc-lang .icl-fr {
+  border-right: 1px solid #005cab;
+}
+
+@media (max-width: 36em) {
+  #bloc-lang .icl-fr {
+    border-right: none;
+    border-bottom: 1px solid #005cab;
+  }
+}
+
+#bloc-lang a {
+  text-decoration: none;
+  font-size: 1em;
+  font-family: sofia_pro_light_condensedRg, arial;
+}
+
+#bloc-lang a.lang_sel_sel {
+  color: #005cab;
+}
+
+#bloc-lang a.lang_sel_other {
+  color: #eb5b26;
+}
+
+#bloc-lang a:hover {
+  color: #eb5b26;
+}
+
+#bloc-lang #lang_sel_list a,
+#bloc-lang #lang_sel_list a:visited {
+  background: transparent;
+}
+
+.site-main {
+  float: left;
+  width: 100%;
+}
+
+@media only screen and (min-width: 36em) and (max-width: 50em) {
+  .site-main {
     width: 100%;
   }
 }
 
-@media (max-width: 35em) {
-  .home-pag {
+@media (max-width: 36em) {
+  .site-main {
     width: 100%;
   }
 }
 
-.home-pag .text-home {
+.site-main .block--home-2-3 {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 65.66667%;
+  margin-right: 3%;
+  margin-bottom: 3%;
+  background: #000;
+}
+
+@media only screen and (min-width: 36em) and (max-width: 50em) {
+  .site-main .block--home-2-3 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 36em) {
+  .site-main .block--home-2-3 {
+    width: 100%;
+  }
+}
+
+.site-main .block--home-1-3 {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 31.33333%;
+  margin-bottom: 3%;
+  max-width: 500px;
+  background: #000;
+}
+
+@media only screen and (min-width: 36em) and (max-width: 50em) {
+  .site-main .block--home-1-3 {
+    width: 100%;
+    display: block;
+    margin: 0 auto 3%;
+  }
+}
+
+@media (max-width: 36em) {
+  .site-main .block--home-1-3 {
+    width: 100%;
+    display: block;
+    margin: 0 auto 3%;
+  }
+}
+
+.site-main .block--home-1-3 figure {
+  height: 100%;
+  overflow: hidden;
+}
+
+.site-main .block--home-1-3 img {
+  max-width: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+@media only screen and (min-width: 36em) and (max-width: 50em) {
+  .site-main .block--home-1-3 img {
+    position: static;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+
+@media (max-width: 36em) {
+  .site-main .block--home-1-3 img {
+    position: static;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+
+.site-main .text-home {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
   text-align: center;
   font-size: 1.2em;
-  padding: 0.5em;
+  line-height: 1.3em;
+  padding: 0.5em 1em;
   color: white;
-  font-family: 'abraham_lincolnregular';
   letter-spacing: 1px;
   background-color: rgba(235, 91, 38, 0.8);
 }
 
-@media (max-width: 35em) {
-  .home-pag .text-home {
+@media (max-width: 36em) {
+  .site-main .text-home {
     position: relative;
     background-color: #eb5b26;
   }
 }
 
-.home-pag .text-home a {
+.site-main .text-home a {
   text-decoration: none;
 }
 
-.home-pag p {
+.site-main p {
   margin: 0;
 }
 
-.post-1 {
-  width: 100%;
-  text-align: center;
-  margin-top: 2em;
-  -webkit-animation: logo-intro 2s ease-in-out 1;
-  animation: logo-intro 2s ease-in-out 1;
-}
-
-.post-1 .site-branding a {
-  margin: 0 auto;
-}
-
-.intro {
-  float: left;
-  width: 100%;
-  text-align: center;
-}
-
-@media only screen and (min-width: 35em) and (max-width: 50em) {
-  .intro {
-    width: 100%;
-  }
-}
-
-@media (max-width: 35em) {
-  .intro {
-    width: 100%;
-  }
-}
-
-.intro .balloon {
-  background: url("../../../img/Montgolfiere.png") no-repeat;
-  display: inline-block;
-  width: 150px;
-  height: 275px;
-  position: relative;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  z-index: 10;
-  -webkit-animation: balloons 4s 1.9s ease-in-out infinite;
-  animation: balloons 4s 1.9s ease-in-out infinite;
-  -webkit-transform-origin: bottom center;
-  transform-origin: bottom center;
-}
-
-.intro .balloon:hover {
-  opacity: 0.8;
-  filter: alpha(opacity=80);
-}
-
-.menu-menu-projets-container {
-  float: left;
-  width: 100%;
+.site-main img {
   display: block;
-  margin: 3em 0 0 0;
 }
 
-@media only screen and (min-width: 35em) and (max-width: 50em) {
-  .menu-menu-projets-container {
-    margin: 1em 0 0 0;
+.home .block--project-1-3 {
+  margin-bottom: 3%;
+}
+
+@media only screen and (min-width: 50em) and (max-width: 70em) {
+  .home .block--project-1-3 {
+    width: 31.33333%;
+    margin-right: 3%;
+    display: inline-block;
+  }
+
+  .home .block--project-1-3:nth-child(n) {
+    margin-right: 3%;
+  }
+
+  .home .block--project-1-3:nth-child(3n) {
+    margin-right: 0;
   }
 }
 
-@media (max-width: 35em) {
-  .menu-menu-projets-container {
-    margin: 1em 0 0 0;
+@media only screen and (min-width: 36em) and (max-width: 50em) {
+  .home .block--project-1-3 {
+    width: 31.33333%;
+    margin-right: 3%;
+    display: inline-block;
+  }
+
+  .home .block--project-1-3:nth-child(n) {
+    margin-right: 3%;
+  }
+
+  .home .block--project-1-3:nth-child(3n) {
+    margin-right: 0;
   }
 }
 
-.menu-menu-projets-container li {
-  display: block;
-  text-align: left;
-  margin-right: 1em;
+@media (max-width: 36em) {
+  .home .block--project-1-3 {
+    width: 100%;
+    margin-right: 3%;
+    display: inline-block;
+  }
+
+  .home .block--project-1-3:nth-child(n) {
+    margin-right: 3%;
+  }
+
+  .home .block--project-1-3:nth-child(1n) {
+    margin-right: 0;
+  }
+}
+
+.module-projets h1 {
+  font-size: 1.4em;
   font-family: 'decima_novaregular';
-}
-
-@media only screen and (min-width: 35em) and (max-width: 50em) {
-  .menu-menu-projets-container li {
-    text-align: center;
-    margin-right: 0;
-  }
-}
-
-@media (max-width: 35em) {
-  .menu-menu-projets-container li {
-    text-align: center;
-    margin-right: 0;
-  }
-}
-
-.menu-menu-projets-container li > a:hover {
-  color: #eb5b26;
-}
-
-.menu-menu-projets-container .current-menu-item a,
-.menu-menu-projets-container a:hover {
-  color: #005cab;
-}
-
-.menu-menu-projets-container a {
-  color: gray;
-  font-size: 1em;
-  letter-spacing: 1px;
-}
-
-@media (max-width: 35em) {
-  .menu-menu-projets-container a {
-    padding: 0.3em 0;
-  }
-}
-
-.menu-menu-projets-container #projet-item {
   color: #005CAB;
-  border-top: solid #cccccc 1px;
-  border-bottom: solid #cccccc 1px;
-  text-transform: uppercase;
-  font-size: 1.3em;
-}
-
-.menu-menu-projets-container .sub-menu {
-  width: 100%;
-}
-
-.menu-menu-projets-container .sub-menu a {
-  width: 100%;
-  color: #808080;
-}
-
-.menu-menu-projets-container .sub-menu a:hover {
-  color: #005CAB;
-}
-
-.module-projets {
-  float: left;
-  width: 80%;
-}
-
-@media only screen and (min-width: 35em) and (max-width: 50em) {
-  .module-projets {
-    width: 100%;
-  }
-}
-
-@media (max-width: 35em) {
-  .module-projets {
-    width: 100%;
-  }
 }
 
 .module {
@@ -2395,27 +2286,87 @@ html[xmlns] .slides {
   padding-right: 0.5em;
 }
 
-@media only screen and (min-width: 35em) and (max-width: 50em) {
+@media only screen and (min-width: 36em) and (max-width: 50em) {
   .module {
     width: 100%;
   }
 }
 
-@media (max-width: 35em) {
+@media (max-width: 36em) {
   .module {
     width: 100%;
   }
-}
-
-.module h1 {
-  font-size: 1.8em;
-  font-family: "abraham_lincolnregular";
-  color: #005CAB;
-  letter-spacing: 1px;
 }
 
 .module p {
   margin: 0;
+}
+
+.bloc-idem-project {
+  margin-top: 1em;
+}
+
+.block--project-1-3 {
+  margin-bottom: 3%;
+  width: 31.33333%;
+  margin-right: 3%;
+  display: inline-block;
+}
+
+.block--project-1-3:nth-child(n) {
+  margin-right: 3%;
+}
+
+.block--project-1-3:nth-child(3n) {
+  margin-right: 0;
+}
+
+@media only screen and (min-width: 50em) and (max-width: 70em) {
+  .block--project-1-3 {
+    width: 48.5%;
+    margin-right: 3%;
+    display: inline-block;
+  }
+
+  .block--project-1-3:nth-child(n) {
+    margin-right: 3%;
+  }
+
+  .block--project-1-3:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+@media only screen and (min-width: 36em) and (max-width: 50em) {
+  .block--project-1-3 {
+    width: 48.5%;
+    margin-right: 3%;
+    display: inline-block;
+  }
+
+  .block--project-1-3:nth-child(n) {
+    margin-right: 3%;
+  }
+
+  .block--project-1-3:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 36em) {
+  .block--project-1-3 {
+    width: 100%;
+    margin-right: 0;
+    display: inline-block;
+  }
+
+  .block--project-1-3:nth-child(n) {
+    margin-right: 0;
+  }
+
+  .block--project-1-3:nth-child(1n) {
+    margin-right: 0;
+  }
 }
 
 .scroll-pane {
@@ -2434,45 +2385,27 @@ html[xmlns] .slides {
   background-color: #cccccc;
 }
 
-.info {
-  float: left;
-  width: 80%;
-}
-
-@media only screen and (min-width: 35em) and (max-width: 50em) {
-  .info {
-    width: 100%;
-  }
-}
-
-@media (max-width: 35em) {
-  .info {
-    width: 100%;
-  }
-}
-
 .info #map_canvas {
   height: 20em;
 }
 
-@media only screen and (min-width: 35em) and (max-width: 50em) {
+@media only screen and (min-width: 36em) and (max-width: 50em) {
   .info #map_canvas {
-    margin-top: 1em;
+    margin-top: 0.5em;
   }
 }
 
-@media (max-width: 35em) {
+@media (max-width: 36em) {
   .info #map_canvas {
-    margin-top: 1em;
+    margin-top: 0.5em;
   }
 }
 
 .info h2 {
-  font-family: "abraham_lincolnregular";
-  font-size: 1.2em;
+  font-family: 'decima_novaregular';
+  font-size: 1em;
   color: #005CAB;
   text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 .info h3 {
@@ -2492,7 +2425,7 @@ html[xmlns] .slides {
   float: left;
 }
 
-@media (max-width: 35em) {
+@media (max-width: 36em) {
   .info .module-1 {
     width: 100%;
   }
@@ -2519,7 +2452,7 @@ html[xmlns] .slides {
   float: left;
 }
 
-@media (max-width: 35em) {
+@media (max-width: 36em) {
   .info .module-2 {
     width: 100%;
     margin-top: 2em;
@@ -2531,7 +2464,7 @@ html[xmlns] .slides {
   float: left;
 }
 
-@media (max-width: 35em) {
+@media (max-width: 36em) {
   .info .module-3 {
     width: 100%;
     margin-top: 2em;
@@ -2561,13 +2494,13 @@ html[xmlns] .slides {
   margin: 3em 0 0 0;
 }
 
-@media only screen and (min-width: 35em) and (max-width: 50em) {
+@media only screen and (min-width: 36em) and (max-width: 50em) {
   .menu-menu-book-container {
     margin: 1em 0 0 0;
   }
 }
 
-@media (max-width: 35em) {
+@media (max-width: 36em) {
   .menu-menu-book-container {
     margin: 1em 0 0 0;
   }
@@ -2582,14 +2515,14 @@ html[xmlns] .slides {
   font-size: 1.1em;
 }
 
-@media only screen and (min-width: 35em) and (max-width: 50em) {
+@media only screen and (min-width: 36em) and (max-width: 50em) {
   .menu-menu-book-container li {
     text-align: center;
     margin-right: 0;
   }
 }
 
-@media (max-width: 35em) {
+@media (max-width: 36em) {
   .menu-menu-book-container li {
     text-align: center;
     margin-right: 0;
@@ -2629,105 +2562,12 @@ html[xmlns] .slides {
   color: #005CAB;
 }
 
-.menu-menu-equipe-container {
-  float: left;
-  width: 100%;
-  display: block;
-  margin: 3em 0 0 0;
-}
-
-@media only screen and (min-width: 35em) and (max-width: 50em) {
-  .menu-menu-equipe-container {
-    margin: 1em 0 0 0;
-  }
-}
-
-@media (max-width: 35em) {
-  .menu-menu-equipe-container {
-    margin: 1em 0 0 0;
-  }
-}
-
-.menu-menu-equipe-container li {
-  display: block;
-  text-align: left;
-  margin-right: 1em;
-  font-family: 'decima_novaregular';
-}
-
-@media only screen and (min-width: 35em) and (max-width: 50em) {
-  .menu-menu-equipe-container li {
-    text-align: center;
-    margin-right: 0;
-  }
-}
-
-@media (max-width: 35em) {
-  .menu-menu-equipe-container li {
-    text-align: center;
-    margin-right: 0;
-  }
-}
-
-.menu-menu-equipe-container .current-menu-item a,
-.menu-menu-equipe-container a:hover {
-  color: #005CAB;
-}
-
-.menu-menu-equipe-container a {
-  color: #808080;
-  font-size: 1em;
-  letter-spacing: 1px;
-}
-
-.menu-menu-equipe-container .menu-item-82 {
-  border-top: solid #cccccc 1px;
-  border-bottom: solid #cccccc 1px;
-}
-
-.menu-menu-equipe-container .menu-item-82 a {
-  color: #005CAB;
-  text-transform: uppercase;
-  font-size: 1.3em;
-}
-
-.menu-menu-equipe-container .sub-menu {
-  width: 100%;
-}
-
-.menu-menu-equipe-container .sub-menu a {
-  width: 100%;
-  font-style: italic;
-  color: #808080;
-}
-
-.menu-menu-equipe-container .sub-menu a:hover {
-  color: #005CAB;
-}
-
-.equipe {
-  float: left;
-  width: 80%;
-}
-
-@media only screen and (min-width: 35em) and (max-width: 50em) {
-  .equipe {
-    width: 100%;
-  }
-}
-
-@media (max-width: 35em) {
-  .equipe {
-    width: 100%;
-  }
-}
-
 .equipe .foto_equipe {
   width: 50%;
   float: left;
 }
 
-@media (max-width: 35em) {
+@media (max-width: 36em) {
   .equipe .foto_equipe {
     width: 100%;
     text-align: center;
@@ -2737,10 +2577,10 @@ html[xmlns] .slides {
 .equipe .text_equipe {
   width: 50%;
   float: left;
-  padding: 1em 0 0 1em;
+  padding: 0 0 0 1em;
 }
 
-@media (max-width: 35em) {
+@media (max-width: 36em) {
   .equipe .text_equipe {
     width: 100%;
     padding: 0;
@@ -2755,11 +2595,10 @@ html[xmlns] .slides {
 }
 
 .equipe h1 {
-  font-family: "abraham_lincolnregular";
-  font-size: 1.5em;
+  font-family: 'decima_novaregular';
+  font-size: 1.25em;
   color: #005CAB;
   text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 *,
@@ -2782,24 +2621,25 @@ body {
 }
 
 #page {
-  margin: 5em 20%;
+  margin: 0 15% 2em;
+  max-width: 1200px;
 }
 
 @media only screen and (min-width: 50em) and (max-width: 70em) {
   #page {
-    margin: 5em 10%;
+    margin: 0 10% 2em;
   }
 }
 
-@media only screen and (min-width: 35em) and (max-width: 50em) {
+@media only screen and (min-width: 36em) and (max-width: 50em) {
   #page {
-    margin: 2em 10%;
+    margin: 0 5% 2em;
   }
 }
 
-@media (max-width: 35em) {
+@media (max-width: 36em) {
   #page {
-    margin: 2em 5%;
+    margin: 0 2.5% 2em;
   }
 }
 

@@ -2,12 +2,20 @@ jQuery(window).load(function() {
 	jQuery('.flexslider').flexslider({
 		animation: "slide",
 		slideshow: false,
-		controlNav: false		
+		controlNav: false,
+		start:function(){
+			jQuery(".site-main").find(".flexslider-wrapper").removeClass("loading");
+			jQuery(".spinner").hide();
+		}
 	}); 
 });
 
+jQuery(function($) {
+	$('.item-home-equal').matchHeight();
+});
 
-//fx for the home slider
+/*
+fx for the home slider
 jQuery(function($) {
 	$("#slider-index").responsiveSlides({
 		auto: true,
@@ -19,7 +27,7 @@ jQuery(function($) {
 	});
 });
 
-//fx for the projects slider
+fx for the projects slider
 jQuery(function($) {
 	$(".rslides-proyects").responsiveSlides({
 		auto: false,
@@ -29,6 +37,7 @@ jQuery(function($) {
 		namespace: "callbacks"
 	});
 });
+*/
 
 //fx pour le fancybox de la home
 jQuery(function($) {
@@ -43,18 +52,6 @@ jQuery(function($) {
 	// Initialize the Lightbox and add rel="gallery" to all gallery images when the gallery is set up using  so that a Lightbox Gallery exists
 	$(".gallery a[href$='.jpg'], .gallery a[href$='.png'], .gallery a[href$='.jpeg'], .gallery a[href$='.gif']").attr('rel','gallery').fancybox();
 	// Initalize the Lightbox for any links with the 'video' class and provide improved video embed support
-});
-
-
-//on call jscrollpane function
-jQuery(window).resize(function() {
-	jQuery(function($) {
-		$('.scroll-pane').jScrollPane();
-	});
-});
-
-jQuery(function($) {
-	$('.scroll-pane').jScrollPane();
 });
 
 //function for Responsive menu proyectos

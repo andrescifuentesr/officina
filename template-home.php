@@ -5,78 +5,124 @@ Template Name: Home
 
 get_header(); ?>
 			
-<?php if ( have_posts() ) : ?>
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
 
-	<?php
-		$args2 = array(
-			'post_type' 	=> 'page',		//type / Only the first 20
-			'page_id'   	=> '14',			// For the home ID					
-			'order'			=> 'DESC',		// List in ascending order
-			'orderby'       => 'id'			// List them in their menu order
-		);
+			<?php /* Start the Loop */ ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-		$carouselHome = new WP_Query($args2);
-	?>
+				<div class="block-home-up">	
+				
+					<section class="block--home-2-3 item-home-equal" >
 
+						<div>
+							<!-- <a href="<?php echo $image_attributes[0]; ?>" class="fancybox" rel="group"> -->
+							<?php the_post_thumbnail('full'); ?>
+							<div class="text-home">
+								<?php the_content('text-home'); ?>
+							</div>
+							<!-- </a> -->
+						</div>
 
-	<?php /* Start the Loop */ ?>
-	<?php while ($carouselHome->have_posts()) : $carouselHome->the_post(); ?>
+					</section><!--
 
-	<section role="main">	
-		<article id="post-<?php the_ID(); ?>" <?php post_class('home-pag'); ?> >
+				--><?php endwhile;
+						wp_reset_postdata();
 
-			<?php
-				$args = array(
-					'post_parent'    => $post->ID,			// For the current post
-					'post_type'      => 'attachment',		// Get all post attachments
-					'post_mime_type' => 'image',			// Only grab images
-					'order'			 => 'ASC',				// List in ascending order
-					'orderby'        => 'rand',		// List them in their menu order
-					'numberposts'    => -1, 				// Show all attachments
-					'post_status'    => null,				// For any post status
-				);
+						$args2 = array(
+							'post_type' 		=> 'projets',		//type / Only the first 20
+							'order'				=> 'DESC',			// List in ascending order
+							'posts_per_page'	=>   -1,			// Show all pots
+						);
+						$projectsHome = new WP_Query($args2);
 
-				// Retrieve the items that match our query; in this case, images attached to the current post.
-				$attachments = get_posts($args); ?>
+					while ($projectsHome->have_posts()) : $projectsHome->the_post();
 
-			<?php // If any images are attached to the current post, do the following: ?>
-			<?php if ($attachments) {	?>
+						if(get_field('home_layout') == "position_1") { ?><!--
+		  
+						--><section class="block--home-1-3 item-home-equal" >
 
-				<!-- Slideshow 2 -->
-				<div class="callbacks_container">
-					<ul class="rslides" id="slider-index">								
-
-						<?php // Now we loop through all of the images that we found ?>
-						<?php 	foreach ($attachments as $attachment) { ?>
-							<?php $image_attributes = wp_get_attachment_image_src( $attachment->ID, 'full'); // returns an array ?>	
-							<li>
-								<a href="<?php echo $image_attributes[0]; ?>" class="fancybox" rel="group">
-									<?php echo wp_get_attachment_image($attachment->ID, 'sliderHome', false, $default_attr); ?>
-									<?php
-										$cc = get_the_content();
-										if($cc != '') { ?>
-											<div class="text-home caption">
-												<?php the_content('text-home'); ?>
-											</div>
-									<?php } ?>
+								<a href="<?php the_permalink(); ?>" >
+									<figure class="effect-ming">
+										<?php the_post_thumbnail('imgProject'); ?>
+										<figcaption>
+											<p><?php the_title(); ?></p>
+										</figcaption>			
+									</figure>
 								</a>
-				        	</li>
 
-						<?php } // End of foreach Loop?>	
-					</ul>
+							</section>
+						<?php }  
+					endwhile; ?>
+
 				</div>
-			
-				<div style="clear:both"></div>
-			
-				<?php //we check if there is a intro text or not ?>
-			
-								
-			<?php } //End of if loop ?>
-		</article>
-	</section>
 
-	<?php endwhile; ?>
+				<div class="block-home-down">
 
-<?php endif; ?>
+					<?php 
 
+						$args3 = array(
+							'post_type' 		=> 'projets',		//type / Only the first 20
+							'order'				=> 'ASC',			// List in ascending order
+							'posts_per_page'	=>   -1,			// Show all pots
+							'orderby' 			=> 'meta_value',
+							'meta_key' 			=> 'home_layout'
+						);
+						$projectsHome = new WP_Query($args3);
+
+						while ($projectsHome->have_posts()) : $projectsHome->the_post();
+
+					if(get_field('home_layout') == "position_2") { ?><!--
+
+					--><section class="block--project-1-3" >
+
+							<a href="<?php the_permalink(); ?>" >
+								<figure class="effect-ming">
+									<?php the_post_thumbnail('imgProject'); ?>
+									<figcaption>
+										<p><?php the_title(); ?></p>
+									</figcaption>			
+								</figure>
+							</a>
+
+						</section><!--
+
+				--><?php } else if(get_field('home_layout') == "position_3") { ?><!--
+
+					--><section class="block--project-1-3" >
+							
+							<a href="<?php the_permalink(); ?>" >
+								<figure class="effect-ming">
+									<?php the_post_thumbnail('imgProject'); ?>
+									<figcaption>
+										<p><?php the_title(); ?></p>
+									</figcaption>			
+								</figure>
+							</a>
+
+						</section><!--
+
+				--><?php } else if(get_field('home_layout') == "position_4") { ?><!--
+
+					--><section class="block--project-1-3" >
+
+							<a href="<?php the_permalink(); ?>" >
+								<figure class="effect-ming">
+									<?php the_post_thumbnail('imgProject'); ?>
+									<figcaption>
+										<p><?php the_title(); ?></p>
+									</figcaption>			
+								</figure>
+							</a>
+
+						</section><!--
+
+					--><?php }
+					endwhile; ?>
+				
+				</div><!-- .block-home-down -->
+
+			</main><!-- #main -->
+		</div><!-- #primary -->
+			
 <?php get_footer(); ?>

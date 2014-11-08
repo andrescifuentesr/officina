@@ -8,7 +8,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('equipe'); ?> >
 	
-	<?php if( is_page( array(6, 8) )  ) {  ?>
+	<?php if( is_page( array(8, 882) )  ) {  ?>
 		<?php the_post_thumbnail('full'); ?>
 	<?php } else { ?>
 		<div class="foto_equipe">

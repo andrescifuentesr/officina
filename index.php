@@ -13,11 +13,80 @@
 
 get_header(); ?>
 
-	<section role="main">	
-		<article id="post-<?php the_ID(); ?>" class="intro" ?> 
-			
-			<a href="<?php echo get_permalink('14') ?>" class="balloon"></a>
-			</article>
-		</section>
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+			<?php /* Start the Loop */ ?>
+			<?php while ( have_posts() ) : the_post(); ?>
+
+				<section class="block--home-2-3" >
+
+					<a href="<?php echo $image_attributes[0]; ?>" class="fancybox" rel="group">
+						<div class="text-home">
+							<?php the_content('text-home'); ?>
+						</div>
+					</a>
+
+				</section>
+
+				<?php wp_reset_postdata(); ?>
+
+				<?php
+					$args2 = array(
+						'post_type' 		=> 'projets',		//type / Only the first 20
+						'order'				=> 'DESC',			// List in ascending order
+						'posts_per_page'	=>   4,				// Show all pots
+					);
+
+					$projectsHome = new WP_Query($args2);
+				?>
+
+				<?php while ($projectsHome->have_posts()) : $projectsHome->the_post(); ?><!--
+
+				--><section class="block--home-1-3" >
+
+					<a href="<?php echo $image_attributes[0]; ?>" class="fancybox" rel="group">
+						<div class="text-home">
+							<?php the_title(); ?>
+						</div>
+					</a>
+
+				</section><!--
+
+			--><section class="block--home-1-3" >
+
+					<a href="<?php echo $image_attributes[0]; ?>" class="fancybox" rel="group">
+						<div class="text-home">
+							<?php the_title(); ?>
+						</div>
+					</a>
+
+				</section><!--
+
+			--><section class="block--home-1-3" >
+
+					<a href="<?php echo $image_attributes[0]; ?>" class="fancybox" rel="group">
+						<div class="text-home">
+							<?php the_title(); ?>
+						</div>
+					</a>
+
+				</section><!--
+
+			--><section class="block--home-1-3" >
+
+					<a href="<?php echo $image_attributes[0]; ?>" class="fancybox" rel="group">
+						<div class="text-home">
+							<?php the_title(); ?>
+						</div>
+					</a>
+
+				</section>
+
+			<?php endwhile; ?>
+
+			<?php endwhile; ?>
+
+			</main><!-- #main -->
+		</div><!-- #primary -->
 			
 <?php get_footer(); ?>

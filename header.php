@@ -25,37 +25,21 @@
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 	
-	<header id="masthead" <?php post_class('site-header'); ?> role="banner">	
+	<header id="masthead" class="site-header" role="banner">
 		
 		<div id="bloc-lang">
-			<?php if (function_exists('qts_language_menu') ) qts_language_menu('text'); ?>
+			<?php do_action('icl_language_selector'); ?>
 		</div>
 		
 		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo get_permalink('14') ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 		</div>
 
 		<nav id="site-navigation" class="navigation-main" role="navigation">
 			<h1 class="menu-toggle"><?php _e( 'Menu', 'officina' ); ?></h1>
 			<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'officina' ); ?>"><?php _e( 'Skip to content', 'officina' ); ?></a></div>
 
-			<?php if( is_page( array( 7,14 ) ) ) { ?>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			<?php } elseif( is_page( array(8,38, 47, 49, 78) ) ) { ?>
-				<?php wp_nav_menu( array( 'theme_location' => 'secondary' ) ); ?>
-			<?php } elseif( is_page(6) ) { ?>
-					<?php wp_nav_menu( array( 'theme_location' => 'third', 
-											'items_wrap' => '<ul><li id="book-item">Book </li>%3$s</ul>', 
-											'before' => 'Télécharger book:',
-					 ) ); ?>
-			<?php } elseif( ( is_page(378) )  OR ( 'projets' == get_post_type() ) ) { ?>
-				<?php $currentLang = qtrans_getLanguage();
-					( $currentLang == "it") ? $projets = "PROGETTI" : $projets = "PROJETS";
-				 ?>
-				<?php wp_nav_menu( array( 'theme_location' => 'fourth',
-										'items_wrap' => '<ul><li id="projet-item">'.$projets.'</li>%3$s</ul>', 
-										'menu_class' => 'menu nav-responsive' ) ); ?>	
-			<?php  }  ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

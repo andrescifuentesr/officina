@@ -143,6 +143,53 @@ require( get_template_directory() . '/inc/customizer.php' );
 
 
 //-------------------------------------------------  
+//function custome Image
+//-------------------------------------------------
+if ( function_exists( 'add_image_size' ) ) {
+	add_image_size( 'imgProject', 500, 375, true );
+}
+
+
+//-------------------------------------------------  
+//function for adding current classe to principal menu
+// http://wordpress.stackexchange.com/questions/3014/highlighting-wp-nav-menu-ancestor-class-w-o-children-in-nav-structure
+// Just add slug to current Menu
+//-------------------------------------------------
+
+add_filter('nav_menu_css_class', 'current_type_nav_class', 10, 2 );
+function current_type_nav_class($classes, $item) {
+    $post_type = get_post_type();
+    if ($item->attr_title != '' && $item->attr_title == $post_type) {
+        array_push($classes, 'current-menu-item');
+    };
+    return $classes;
+}
+
+//------------------------------------------------------------
+//function for adding current-cat class category Menu on Post
+// http://wordpress.stackexchange.com/questions/98116/add-class-while-on-current-post-wp-list-categories
+//------------------------------------------------------------
+
+
+add_filter('wp_list_categories','style_current_cat_single_post');
+// filter to add the .current-cat class to categories list in single post
+function style_current_cat_single_post($output) {
+    if( is_single() ) :
+        global $post;
+        foreach ( get_the_category($post->ID) as $cat ) {
+            $cats[] = $cat->term_id;
+        }
+        foreach($cats as $value) {
+            if(preg_match('#item-' . $value . '">#', $output)) {
+            $output = str_replace('item-' . $value . '">', 'item-' . $value . ' current-cat">', $output);
+            }
+        }
+    endif;
+return $output;
+}
+
+
+//-------------------------------------------------  
 //function for adding current classe Equipe menu
 //-------------------------------------------------
 
@@ -151,8 +198,8 @@ function wp_list_post_types( $args ) {
         'numberposts'  => -1,
         'offset'       => 0,
         'orderby'      => 'post_title',
-        'order'      => 'ASC',
-        'post_type'    => 'equipe',
+        'order'		   => 'ASC',
+        'post_type'    => 'projets',
         'depth'        => 0,
         'show_date'    => '',
         'date_format'  => get_option('date_format'),

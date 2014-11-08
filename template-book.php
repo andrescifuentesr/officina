@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Projets
+Template Name: Book
 */
 
 get_header(); ?>
@@ -11,19 +11,12 @@ get_header(); ?>
 			<main id="main" class="site-main" role="main">
 
 				<nav class="nav-secondaire">
-					<ul>
-					 <?php 
-						$args = array(
-							'exclude'            => '1',
-							'hide_empty'         => 0,
-							'title_li'           => __( '' ),
-						);
-						wp_list_categories( $args ); 
-					?>
-					</ul>		
+					<a href="<?php the_field('fichier_book_pdf') ?>" target="_blank" class="">
+						<?php the_field('fichier_book_txt'); ?>
+					</a>
 				</nav>
 		
-				<article id="post-<?php the_ID(); ?>" <?php post_class('module-projets'); ?>>
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 					<?php /* Start the Loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>

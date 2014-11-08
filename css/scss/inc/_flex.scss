@@ -8,7 +8,11 @@
  *
  * Contributing author: Tyler Smith (@mbmufffin)
  */
-
+/* Loading
+***********************/
+.loading {height:20em; width:100%; position:relative; }
+//.loading:before {content: ''; display:block; height:50px; width:50px; background: url(../../../img/loader.gif); position:absolute; top:50%; margin-top:-25px; left:50%; margin-left:-25px;}
+.loading .flexslider { opacity:0}
  
 /* Browser Resets */
 .flex-container a:active,
