@@ -29,7 +29,10 @@
 	@include simple-grid(3, 3%);
 	@include mq(lap) {@include simple-grid(2, 3%);}
 	@include mq(tablet) {@include simple-grid(2, 3%);}
-	@include mq(phone) {@include simple-grid(1, 0);}
+	@include mq(phone) {
+		max-width: 500px;
+		@include simple-grid(1, 0);
+	}
 }
 
 

@@ -19,14 +19,14 @@ get_header(); ?>
 				<ul>
 					<?php 
 						$args = array(
-							'child_of'           => 8,
-							'title_li'           => __( '' ),
+							'child_of'		=> 8,
+							'title_li'		=> __( '' ),
 						);
 						wp_list_pages( $args ); 
 					?>
-					<li>CV</li>
-				</ul>		
-			</nav>		
+					<li><a target="_blank" href="http://localhost:8888/officina/wp-content/uploads/2013/07/Officina-book-AO-Présentation-2013-CS6.pdf">CV</a></li>
+				</ul>
+			</nav>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 

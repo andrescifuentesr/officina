@@ -1,17 +1,4 @@
 //========================================== Font Face
-@font-face {
-    font-family: 'abraham_lincolnregular';
-    src: url('../../font/abrahamlincoln-webfont.eot');
-    src: url('../../font/abrahamlincoln-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../../font/abrahamlincoln-webfont.woff') format('woff'),
-         url('../../font/abrahamlincoln-webfont.ttf') format('truetype'),
-         url('../../font/abrahamlincoln-webfont.svg#abraham_lincolnregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-
 
 @font-face {
     font-family: 'sofia_pro_light_condensedRg';
@@ -83,6 +70,22 @@
     @media (max-width: 36em) { @content; }
   }
 }
+
+/* Clearing */
+@mixin clear() {
+    & {
+        *zoom: 1;
+    }
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
 
 
 /* Retina Images */

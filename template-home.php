@@ -14,14 +14,10 @@ get_header(); ?>
 				<div class="block-home-up">	
 				
 					<section class="block--home-2-3 item-home-equal" >
-
-						<div>
-							<!-- <a href="<?php echo $image_attributes[0]; ?>" class="fancybox" rel="group"> -->
-							<?php the_post_thumbnail('full'); ?>
-							<div class="text-home">
-								<?php the_content('text-home'); ?>
-							</div>
-							<!-- </a> -->
+					
+						<?php the_post_thumbnail('full'); ?>
+						<div class="text-home">
+							<?php the_content('text-home--news'); ?>
 						</div>
 
 					</section><!--
@@ -118,9 +114,34 @@ get_header(); ?>
 						</section><!--
 
 					--><?php }
-					endwhile; ?>
+					endwhile; 
+					wp_reset_postdata();
+
+						$args4 = array(
+							'post_type'			=> 'page',			//type / Only the first 20
+							'post__in'			=> array(38, 8, 7),			//type / Only the first 20
+							'posts_per_page'	=>   -1,			// Show all pots
+						);
+						$pagesHome = new WP_Query($args4);
+
+						while ($pagesHome->have_posts()) : $pagesHome->the_post(); ?><!--
+
+					--><section class="block--project-1-3" >
+
+							<a href="<?php the_permalink(); ?>" >
+								<figure class="effect-ming">
+									<?php the_post_thumbnail('imgProject'); ?>
+									<figcaption>
+										<p><?php the_title(); ?></p>
+									</figcaption>			
+								</figure>
+							</a>
+
+						</section><!--
+
+					--><?php endwhile; ?>
 				
-				</div><!-- .block-home-down -->
+				</div><!-- .block-home-down -->				
 
 			</main><!-- #main -->
 		</div><!-- #primary -->

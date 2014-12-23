@@ -10,7 +10,7 @@ get_header(); ?>
 				<ul>
 				<?php 
 					$args = array(
-						'exclude'            => '1',
+						'exclude'            => '1,11,19,20,21',
 						'hide_empty'         => 0,
 						'title_li'           => __( '' ),
 					);

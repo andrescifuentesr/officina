@@ -11,10 +11,10 @@
 	<?php if( is_page( array(8, 882) )  ) {  ?>
 		<?php the_post_thumbnail('full'); ?>
 	<?php } else { ?>
-		<div class="foto_equipe">
+		<div class="block-1-2-left">
 			<?php the_post_thumbnail('full'); ?>
 		</div>
-		<div class="text_equipe">
+		<div class="block-1-2-right">
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 			<?php the_content(); ?>
 		</div>

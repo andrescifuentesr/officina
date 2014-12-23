@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Projets
+Template Name: Equipe
 */
 
 get_header(); ?>
@@ -10,41 +10,42 @@ get_header(); ?>
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
 
-				<nav class="nav-secondaire">
-					<ul>
-					 <?php 
+			<nav class="nav-secondaire">
+				<ul>
+					<?php 
 						$args = array(
-							'exclude'            => '1,11,19,20,21',
-							'hide_empty'         => 0,
-							'title_li'           => __( '' ),
+							'child_of'		=> 8,
+							'title_li'		=> __( '' ),
 						);
-						wp_list_categories( $args ); 
+						wp_list_pages( $args ); 
 					?>
-					</ul>		
-				</nav>
+					<li><a target="_blank" href="http://localhost:8888/officina/wp-content/uploads/2013/07/Officina-book-AO-Présentation-2013-CS6.pdf">CV</a></li>
+				</ul>
+			</nav>
 		
 				<!--  block similar project -->
 				<div class="bloc-idem-project">		
 
 					<?php
-						$category 		= get_category( get_query_var( 'cat' ) );
-						$category_id 	= $category->cat_ID;
-						$args = array(
-							'cat'				=> $category_id, 		//the current category
-							'posts_per_page'	=> -1,					// all
-							'post_type'   		=> 'projets'
-						);
 
-						$ProjectPosts = new WP_Query($args);
+						$args = array(
+							'post_type'			=> 'page',			//type / Only the first 20
+							'posts_per_page'	=>  -1,			// Show all pots'
+							'post_parent'		=> 8,			//type / Only the first 20
+							'post__not_in'		=> array(38),
+							'orderby'			=> 'menu_order',
+							'order'				=> 'ASC'
+						);
+						$pagesEquipe = new WP_Query($args);
 
 					?>
-					<?php while ($ProjectPosts->have_posts()) : $ProjectPosts->the_post(); ?><!--
+					<?php while ($pagesEquipe->have_posts()) : $pagesEquipe->the_post(); ?><!--
 				
 					--><section class="block--project-1-3" >
 
 							<a href="<?php the_permalink(); ?>" >
 								<figure class="effect-ming">
-									<?php the_post_thumbnail('full'); ?>
+									<?php the_post_thumbnail('imgProject'); ?>
 									<figcaption>
 										<p><?php the_title(); ?></p>
 									</figcaption>			

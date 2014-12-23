@@ -41,15 +41,16 @@ html {
 
 body {
 	// Ala Trent Walton
-	@include css-hyphens(auto);
-	@extend %breakword;
+	// @include css-hyphens(auto);
+	// @extend %breakword;
+	background: url('../../../img/inflicted.png') #fff;
 }
 
 
 
 #page{
 	margin:0 15% 2em;
-	max-width:1200px;
+	// max-width:1200px;
 	@include mq(lap) {margin:0 10% 2em;}
 	@include mq(tablet) {margin:0 5% 2em;}
 	@include mq(phone) {margin:0 2.5% 2em;}

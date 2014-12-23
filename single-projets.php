@@ -9,7 +9,7 @@ get_header(); ?>
 				<ul>
 				<?php 
 					$args = array(
-						'exclude'            => '1',
+						'exclude'            => '1,11,19,20,21',
 						'hide_empty'         => 0,
 						'title_li'           => __( '' ),
 						'current_category'   => 1,
@@ -75,9 +75,7 @@ get_header(); ?>
 										?>
 										<?php $image_attributes = wp_get_attachment_image_src( $attachment->ID, 'full'); // returns an array ?>	
 										<li>
-											<a href="<?php echo $image_attributes[0]; ?>" class="fancybox" rel="group">
-												<?php echo wp_get_attachment_image($attachment->ID, 'full', false, $default_attr); ?>
-											</a>
+											<?php echo wp_get_attachment_image($attachment->ID, 'full', false, $default_attr); ?>
 										</li>
 									<?php } // End of foreach Loop?>
 								</ul>

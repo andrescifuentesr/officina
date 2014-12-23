@@ -146,7 +146,7 @@ require( get_template_directory() . '/inc/customizer.php' );
 //function custome Image
 //-------------------------------------------------
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'imgProject', 500, 375, true );
+	add_image_size( 'imgProject', 600, 600, true );
 }
 
 
