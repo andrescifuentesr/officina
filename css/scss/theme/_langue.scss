@@ -1,13 +1,12 @@
 #bloc-lang {
 	position: absolute;
 	top:5px;
-	right:15%;
-	@include mq(lap) {right: 10%;}
-	@include mq(tablet) {right: 5%;}
-	@include mq(tablet) {right: 5%;}
-	@include mq(phone) {right: 2.5%;}
+	right:0;
+	// @include mq(lap) {right: 10%;}
+	// @include mq(tablet) {right: 5%;}
+	// @include mq(phone) {right: 2.5%;}
 	
-	ul {list-style :none ; margin:0;}
+	ul {list-style :none ; margin:0; float: right;}
 	
 	li {
 		display:inline-block;

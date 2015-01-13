@@ -1503,57 +1503,6 @@ html[xmlns] .slides {
   margin: 0 -3px 0 0;
 }
 
-@-webkit-keyframes balloons {
-  0% {
-    -webkit-transform: translateY(0);
-  }
-
-  50% {
-    -webkit-transform: translateY(-25px) rotate(4deg);
-  }
-
-  100% {
-    -webkit-transform: translateY(0);
-  }
-}
-
-@keyframes balloons {
-  0% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-
-  50% {
-    -webkit-transform: translateY(-25px) rotate(4deg);
-    transform: translateY(-25px) rotate(4deg);
-  }
-
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-
-@keyframes logo-intro {
-  0% {
-    margin-top: 10em;
-  }
-
-  100% {
-    margin-top: 2em;
-  }
-}
-
-@-webkit-keyframes logo-intro {
-  0% {
-    margin-top: 10em;
-  }
-
-  100% {
-    margin-top: 2em;
-  }
-}
-
 .site-header {
   width: 100%;
   margin: 2em 0 2em;
@@ -1741,12 +1690,12 @@ html[xmlns] .slides {
 .navigation-main li.current_page_item a,
 .navigation-main li.current-menu-item a,
 .navigation-main li.current-page-ancestor a {
-  color: #005cab;
+  color: #005CAB;
   color: #005CAB;
 }
 
 .navigation-main li.current-menu-ancestor > a {
-  color: #eb5b26;
+  color: #EB5B26;
 }
 
 .navigation-main .current-menu-parent ul {
@@ -2051,36 +2000,13 @@ figure.effect-ming:hover img {
 #bloc-lang {
   position: absolute;
   top: 5px;
-  right: 15%;
-}
-
-@media only screen and (min-width: 50em) and (max-width: 70em) {
-  #bloc-lang {
-    right: 10%;
-  }
-}
-
-@media only screen and (min-width: 36em) and (max-width: 50em) {
-  #bloc-lang {
-    right: 5%;
-  }
-}
-
-@media only screen and (min-width: 36em) and (max-width: 50em) {
-  #bloc-lang {
-    right: 5%;
-  }
-}
-
-@media (max-width: 36em) {
-  #bloc-lang {
-    right: 2.5%;
-  }
+  right: 0;
 }
 
 #bloc-lang ul {
   list-style: none;
   margin: 0;
+  float: right;
 }
 
 #bloc-lang li {
@@ -2098,13 +2024,13 @@ figure.effect-ming:hover img {
 }
 
 #bloc-lang .icl-fr {
-  border-right: 1px solid #005cab;
+  border-right: 1px solid #005CAB;
 }
 
 @media (max-width: 36em) {
   #bloc-lang .icl-fr {
     border-right: none;
-    border-bottom: 1px solid #005cab;
+    border-bottom: 1px solid #005CAB;
   }
 }
 
@@ -2115,15 +2041,15 @@ figure.effect-ming:hover img {
 }
 
 #bloc-lang a.lang_sel_sel {
-  color: #005cab;
+  color: #005CAB;
 }
 
 #bloc-lang a.lang_sel_other {
-  color: #eb5b26;
+  color: #EB5B26;
 }
 
 #bloc-lang a:hover {
-  color: #eb5b26;
+  color: #EB5B26;
 }
 
 #bloc-lang #lang_sel_list a,
@@ -2553,28 +2479,34 @@ html {
 }
 
 body {
-  background: url("../../../img/inflicted.png") white;
+  background: url("../../../img/inflicted.png") #fff;
 }
 
 #page {
-  margin: 0 15% 2em;
+  position: relative;
+  max-width: 1200px;
+  width: 70%;
+  margin: 0 auto 2em;
 }
 
 @media only screen and (min-width: 50em) and (max-width: 70em) {
   #page {
     margin: 0 10% 2em;
+    width: 80%;
   }
 }
 
 @media only screen and (min-width: 36em) and (max-width: 50em) {
   #page {
     margin: 0 5% 2em;
+    width: 90%;
   }
 }
 
 @media (max-width: 36em) {
   #page {
     margin: 0 2.5% 2em;
+    width: 95%;
   }
 }
 
@@ -2600,3 +2532,5 @@ body {
 .clearfix {
   *zoom: 1;
 }
+
+/*# sourceMappingURL=global.css.map */
