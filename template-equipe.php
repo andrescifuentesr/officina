@@ -19,7 +19,7 @@ get_header(); ?>
 						);
 						wp_list_pages( $args ); 
 					?>
-					<li><a target="_blank" href="http://localhost:8888/officina/wp-content/uploads/2013/07/Officina-book-AO-Présentation-2013-CS6.pdf">CV</a></li>
+					<li><a target="_blank" href="http://www.officinarchitecture.com/wp-content/uploads/2013/07/Officina-book-AO-Présentation-2013-CS6.pdf">CV</a></li>
 				</ul>
 			</nav>
 		
@@ -30,9 +30,9 @@ get_header(); ?>
 
 						$args = array(
 							'post_type'			=> 'page',			//type / Only the first 20
-							'posts_per_page'	=>  -1,			// Show all pots'
-							'post_parent'		=> 8,			//type / Only the first 20
-							'post__not_in'		=> array(38),
+							'posts_per_page'	=>  -1,				// Show all pots'
+							'post_parent'		=> 8,				// children of Page Equipe
+							// 'post__not_in'		=> array(38),	//exclude page agence
 							'orderby'			=> 'menu_order',
 							'order'				=> 'ASC'
 						);

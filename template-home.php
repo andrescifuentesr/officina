@@ -14,11 +14,13 @@ get_header(); ?>
 				<div class="block-home-up">	
 				
 					<section class="block--home-2-3 item-home-equal" >
-					
-						<?php the_post_thumbnail('full'); ?>
-						<div class="text-home">
-							<?php the_content('text-home--news'); ?>
-						</div>
+						
+						<figure class="effect-ming">
+							<?php the_post_thumbnail('full'); ?>
+							<figcaption>
+								<?php the_content('text-home--news'); ?>
+							</figcaption>
+						</figure>
 
 					</section><!--
 
