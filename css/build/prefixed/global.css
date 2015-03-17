@@ -1547,7 +1547,7 @@ html[xmlns] .slides {
 .site-header .site-branding a {
   width: 130px;
   height: 27px;
-  background: url("../../../img/Logo_orange.png") no-repeat;
+  background: url("../../../img/logo-officina.svg") no-repeat;
   display: block;
   text-indent: -9999px;
   -webkit-transition: all 0.2s ease;
@@ -1904,12 +1904,13 @@ html[xmlns] .slides {
   position: relative;
   background: #3085a3;
   text-align: center;
+  height: 100%;
 }
 
 .site-main figure img {
   position: relative;
   display: block;
-  min-height: 100%;
+  height: 100%;
   max-width: 100%;
   opacity: 0.8;
 }
@@ -2010,41 +2011,19 @@ figure.effect-ming:hover img {
 
 #bloc-lang li {
   display: inline-block;
-  padding-right: 0.2em !important;
-}
-
-@media (max-width: 36em) {
-  #bloc-lang li {
-    display: block;
-    width: 100%;
-    padding-right: 0 !important;
-    float: none;
-  }
-}
-
-#bloc-lang .icl-fr {
-  border-right: 1px solid #005CAB;
-}
-
-@media (max-width: 36em) {
-  #bloc-lang .icl-fr {
-    border-right: none;
-    border-bottom: 1px solid #005CAB;
-  }
+  padding-right: 0.75em !important;
 }
 
 #bloc-lang a {
   text-decoration: none;
   font-size: 1em;
   font-family: sofia_pro_light_condensedRg, arial;
+  padding-left: 0;
 }
 
 #bloc-lang a.lang_sel_sel {
-  color: #005CAB;
-}
-
-#bloc-lang a.lang_sel_other {
-  color: #EB5B26;
+  padding-bottom: .25em;
+  border-bottom: 2px solid;
 }
 
 #bloc-lang a:hover {

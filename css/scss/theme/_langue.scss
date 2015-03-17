@@ -10,27 +10,30 @@
 	
 	li {
 		display:inline-block;
-		padding-right:0.2em !important;
-		@include mq(phone) {display:block; width:100%; padding-right:0 !important;float:none;}
+		padding-right:0.75em !important;
+		//@include mq(phone) {display:block; width:100%; padding-right:0 !important;float:none;}
 	}
 	
 	.icl-fr {
-		border-right:1px solid $bleu;
-		@include mq(phone) {border-right: none; border-bottom:1px solid $bleu; }
+		// border-right:1px solid $bleu;
+		// @include mq(phone) {border-right: none; border-bottom:1px solid $bleu; }
 	}
 	
 	a {
 		text-decoration:none;
 		font-size: 1em;
 		font-family: $font-family-sans;
+		padding-left: 0;
 	}
 
 	a.lang_sel_sel {
-		color:$bleu;
+		// color:$bleu;
+		padding-bottom: .25em;
+		border-bottom: 2px solid;
 	}
 
 	a.lang_sel_other {
-		color:$orange;
+		// color:$orange;
 	}
 	
 	a:hover {color:$orange;}
