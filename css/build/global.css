@@ -1746,7 +1746,6 @@ html[xmlns] .slides {
 .site-main figure img {
   position: relative;
   display: block;
-  height: 100%;
   max-width: 100%;
   opacity: 0.8;
 }
@@ -1851,7 +1850,7 @@ figure.effect-ming:hover img {
   border-bottom: 2px solid;
 }
 #bloc-lang a:hover {
-  color: #EB5B26;
+  border-bottom: 2px solid;
 }
 #bloc-lang #lang_sel_list a, #bloc-lang #lang_sel_list a:visited {
   background: transparent;
@@ -1890,6 +1889,7 @@ figure.effect-ming:hover img {
     position: absolute;
     top: 50%;
     left: 50%;
+    height: 100%;
     transform: translate(-50%, -50%);
   }
 }
